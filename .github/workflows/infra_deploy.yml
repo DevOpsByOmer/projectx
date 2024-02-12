@@ -1,0 +1,39 @@
+name: Aws EC2
+on: 
+    [push, workflow_dispatch]
+permissions: 
+   id-token: write
+   contents: read
+jobs:
+    EC2_Initialize:
+        runs-on: ubuntu-latest
+        steps:
+
+            - uses: actions/checkout@v4
+              with:
+                 path: /home/runner/work/terraform_aws/terraform_aws/EC2
+             
+            - uses: hashicorp/setup-terraform@v3
+              with:
+                  terraform_version: "1.1.7"
+
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                role-to-assume: "${{secrets.AWS_IAM_ROLE}}"
+                role-session-name: sampleroesession
+                aws-region: "${{secrets.AWS_REGION}}"
+
+            - name: version check
+              run: terraform version
+
+            - name: initialize the dir
+              run:  terraform plan
+
+            - name: initialize the dir
+              run:  terraform apply
+              
+
+              
+
+    
