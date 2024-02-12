@@ -10,8 +10,7 @@ jobs:
         steps:
 
             - uses: actions/checkout@v4
-              with:
-                 path: /home/runner/work/terraform_aws/terraform_aws/EC2
+              
              
             - uses: hashicorp/setup-terraform@v3
               with:
