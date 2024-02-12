@@ -28,10 +28,14 @@ jobs:
               run: terraform version
 
             - name: initialize the dir
-              run:  terraform plan
+              run:  cd project && terraform init
+
 
             - name: initialize the dir
-              run:  terraform apply
+              run:  cd project && terraform plan
+
+            - name: initialize the dir
+              run:  terraform apply -auto-approve
               
 
               

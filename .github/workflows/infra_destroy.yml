@@ -26,11 +26,16 @@ jobs:
             - name: version check
               run: terraform version
 
+           
             - name: initialize the dir
-              run: terraform plan
+              run:  cd project && terraform init
+
 
             - name: initialize the dir
-              run:  terraform destroy
+              run:  cd project && terraform plan
+
+            - name: initialize the dir
+              run:  cd project terraform destroy -auto-approve
               
 
               
