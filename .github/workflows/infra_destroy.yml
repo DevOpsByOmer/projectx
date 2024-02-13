@@ -28,14 +28,14 @@ jobs:
               run: terraform version
 
            
-            - name: initialize the dir
+            - name: INITILAZIE the dir
               run:  cd project && terraform init
 
 
-            - name: initialize the dir
+            - name: CHECKING THE INFRA PLAN
               run:  cd project && terraform plan
 
-            - name: initialize the dir
+            - name: DESTROYING THE INFRA
               run:  cd project && terraform destroy -auto-approve
               
 

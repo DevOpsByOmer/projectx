@@ -27,14 +27,14 @@ jobs:
             - name: version check
               run: terraform version
 
-            - name: initialize the dir
+            - name: INITILAZIE THE DIR
               run:  cd project && terraform init
 
 
-            - name: initialize the dir
+            - name: CHECKING THE INFRA PLAN
               run:  cd project && terraform plan
 
-            - name: initialize the dir
+            - name: DEPLOYING THE INFRA
               run: cd project && terraform apply -auto-approve
               
 
