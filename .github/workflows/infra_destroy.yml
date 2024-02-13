@@ -1,4 +1,4 @@
-name: Aws EC2
+name: Aws infra destroy
 on: 
     [ workflow_dispatch]
 permissions: 
