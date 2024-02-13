@@ -35,7 +35,7 @@ jobs:
               run:  cd project && terraform plan
 
             - name: DEPLOYING THE INFRA
-              run: cd project && terraform apply -auto-approve
+              run: cd project && terraform destroy -auto-approve
               
 
               
