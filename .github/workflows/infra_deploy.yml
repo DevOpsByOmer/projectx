@@ -1,6 +1,6 @@
 name: Aws EC2
 on: 
-    [push, workflow_dispatch]
+    [ workflow_dispatch]
 permissions: 
    id-token: write
    contents: read
@@ -34,8 +34,8 @@ jobs:
             - name: initialize the dir
               run:  cd project && terraform plan
 
-            - name: initialize the dir
-              run:  terraform apply -auto-approve
+            #- name: initialize the dir
+             # run:  terraform apply -auto-approve
               
 
               
