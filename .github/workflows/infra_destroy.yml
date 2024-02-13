@@ -28,10 +28,6 @@ jobs:
               run: terraform version
 
            
-            - name: INITILAZIE the dir
-              run:  cd project && terraform init
-
-
             - name: CHECKING THE INFRA PLAN
               run:  cd project && terraform plan
 
