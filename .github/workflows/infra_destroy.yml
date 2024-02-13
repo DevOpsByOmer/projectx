@@ -27,10 +27,6 @@ jobs:
             - name: version check
               run: terraform version
 
-           
-            - name: CHECKING THE INFRA PLAN
-              run:  cd project && terraform plan
-
             - name: DESTROYING THE INFRA
               run:  cd project && terraform destroy -auto-approve
               
